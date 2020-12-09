@@ -3,6 +3,18 @@
 		<meta charset="utf-8" />
 	</head>
 	<body>
+		def hashMap(queryType, query):
+		    d,s,c1,c2={},0,0,0
+		    for i,j in zip(queryType,query):
+			if i == 'insert':
+			    d[j[0]-c1]=j[1]-c2
+			elif i == 'addToValue':
+			    c2+=j[0]
+			elif i == 'addToKey':
+			    c1+=j[0]
+			elif i== 'get':
+			    s+=d[j[0]-c1]+c2
+		    return s
 		<script src="lib/rapydscript.js"></script>
 	</body>
 </html>
